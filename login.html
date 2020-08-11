@@ -51,7 +51,7 @@
 
 <body class="text-center">
   <div class="container p-5">
-    <form id="login">
+    <form id="login" onsubmit="window.location.href = 'index.html'; return false;">
       <img src="img/login.png"; width="470">
       <div class="form-group">
         <input type="email" id="inputEmail" size="40" class="form-control" placeholder="Escribe aquí tu e-mail" required> 
@@ -63,7 +63,7 @@
         <input type="checkbox" class="form-check-input" id="checkbox1">
         <label class="form-check-label" for="checkbox1">Recuérdame</label>
       </div>
-      <input value="Ingresar" type="submit" class="btn btn-primary" onclick="toIndex()">
+      <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
   </div>
 
