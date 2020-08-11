@@ -1,6 +1,6 @@
 function toIndex() { 
         location.href = "index.html";
-        norelod(); 
+        toLogin.preventDefault();
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
