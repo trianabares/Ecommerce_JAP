@@ -10,13 +10,14 @@ function showCategoriesList(array){
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+                    <img src="` + category.imgSrc + `" alt=" " class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ category.name +`</h4>
                         <small class="text-muted">` + category.soldCount + ` artículos</small>
                     </div>
+                    <p> ` + category.description + ` </p>
                     <h3 class="mb-1">`+ category.currency + category.cost + `</h4>
                 </div>
             </div>
