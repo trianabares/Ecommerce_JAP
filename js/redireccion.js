@@ -1,15 +1,18 @@
-let logueado = sessionStorage.getItem("estaLogueado");
+var log = sessionStorage.getItem("estaLogueado");
 
 function exist(){
-    if (typeof(logueado) == "object") {
+    if (typeof(log) == "object") {
         logueado = false;
         sessionStorage.setItem("estaLogueado", logueado);
     }
 }
 
 function redireccion(){
-    if (logeado != "true") {
-        window.location.replace("./login.html");
+    if (log != "true") {
+        logueado = "true";
+        window.location.href = 'login.html';
+    } else if (logeado == "true"){
+        return false;
     }
 }
 
