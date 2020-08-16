@@ -52,7 +52,7 @@
 <body class="text-center">
   <div class="formulario">
     <img src="img/login.png"; width="470">
-    <form action="" method="post" id="loginForm" onsubmit="window.location.href = 'index.html'; return false;">
+    <form action="" method="post" id="loginForm">
       <div class="form-group">
         <input type="email" id="inputEmail" size="40" class="form-control" placeholder="Escribe aquí tu e-mail"> 
       </div>
@@ -63,7 +63,7 @@
         <input type="checkbox" class="form-check-input" id="checkbox1">
         <label class="form-check-label" for="checkbox1">Recuérdame</label>
       </div>
-      <button type="submit" class="btn btn-primary" onclick="enviarForm()">Ingresar</button>
+      <button type="submit" class="btn btn-primary" id="submitLogin">Ingresar</button>
     </form>
     <p id="error"></p>
   </div>

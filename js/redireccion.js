@@ -1,10 +1,10 @@
-function redireccion(){
-    if (!sessionStorage.getItem("Logueado")){
-        window.location.href = "login.html";
-        sessionStorage.setItem("logueado");
-    } else {
-        return false;
-    }
+function login(){
+  if (sessionStorage.getItem("logueado") === null) {
+    window.location = "/login.html";
+    sessionStorage.stItem("logueado");
+} else {
+  return false;
+}
 }
 
-redireccion();
+login();
