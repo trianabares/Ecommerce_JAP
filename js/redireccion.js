@@ -1,10 +1,19 @@
-function login(){
-  if (sessionStorage.getItem("logueado") === null) {
-    window.location = "./login.html";
-    sessionStorage.stItem("logueado");
-} else {
-  return false;
-}
+let logueado = sessionStorage.getItem("estaLogueado");
+
+function exist(){
+  if(typeof(logueado) == "object") {
+    logueado = false;
+    sessionStorage.setItem("estaLogueado", logueado);
+  }
 }
 
-login();
+function redireccion(){
+  if (logueado == "false") {
+    window.location.replace("./login.html");
+  }else if (logueado != "true"){
+    window.location.replace("./login.html");
+  }
+}
+
+exist();
+redireccion();

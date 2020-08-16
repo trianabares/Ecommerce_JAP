@@ -1,15 +1,33 @@
-let login = document.getElementById("submitLogin");
+const email = document.getElementById("inputEmail");
+const pass = document.getElementById("inputPass");
+const form = document.getElementById("loginForm");
+const error = document.getElementById("error");
 
-login.addEventListener("click", () =>{
-    let email = document.getElementById("inputEmail").value;
-    let pass = document.getElementById("inputPass").value;
-    let error = document.getElementById("error");
+form.addEventListener("submit", e=>{
+    e.preventDefault();
+    let mensajeError = ""
+    let ingresar = false
+    let expEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    error.innerHTML = ""
 
-    if (email == !"" && pass == !""){
-        sessionStorage.stItem("logueado");
-        window.location.href = "./index.html";
-    } 
+    if(!expEmail.test(email.value)){
+        mensajeError += `El email no es valido <br>`
+        ingresar = true 
+    }
+
+    if(pass.value.length == 0){
+        mensajeError += `La cotrasema no es valida <br>`
+        ingresar = true 
+    }
+
+    if(ingresar){
+        error.innerHTML = mensajeError
+    } else{
+        logueado == "true"
+        window.location.assign("index.html")
+    }
 });
+
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
