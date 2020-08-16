@@ -7,7 +7,7 @@ login.addEventListener("click", () =>{
 
     if (email == !"" && pass == !""){
         sessionStorage.stItem("logueado");
-        window.location.href = "index.html";
+        window.location.href = "./index.html";
     } 
 });
 
