@@ -1,13 +1,14 @@
-const email = document.getElementById("inputEmail");
-const pass = document.getElementById("inputPass");
-const form = document.getElementById("loginForm");
-const error = document.getElementById("error");
+var email = document.getElementById("inputEmail");
+var pass = document.getElementById("inputPass");
+var form = document.getElementById("loginForm");
+var error = document.getElementById("error");
 
 form.addEventListener("submit", e=>{
     e.preventDefault();
     let mensajeError = ""
     let ingresar = false
     let expEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    let expPass = /^$|\s/
     error.innerHTML = ""
 
     if(!expEmail.test(email.value)){
@@ -15,9 +16,9 @@ form.addEventListener("submit", e=>{
         ingresar = true 
     }
 
-    if(pass.value.length == 0){
+    if(expPass.test(pass.value)){
         mensajeError += `La contraseña no es válida <br>`
-        ingresar = true 
+        ingresar = true
     }
 
     if(ingresar){
