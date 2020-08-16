@@ -23,7 +23,7 @@ form.addEventListener("submit", e=>{
     if(ingresar){
         error.innerHTML = mensajeError
     } else{
-        window.location.replace("./index.html");
+        window.location.href="index.html";
     }
 });
 
