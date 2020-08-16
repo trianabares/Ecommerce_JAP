@@ -11,12 +11,12 @@ form.addEventListener("submit", e=>{
     error.innerHTML = ""
 
     if(!expEmail.test(email.value)){
-        mensajeError += `El email no es valido <br>`
+        mensajeError += `El email no es válido <br>`
         ingresar = true 
     }
 
     if(pass.value.length == 0){
-        mensajeError += `La cotrasema no es valida <br>`
+        mensajeError += `La contraseña no es válida <br>`
         ingresar = true 
     }
 
