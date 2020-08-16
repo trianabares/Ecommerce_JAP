@@ -23,7 +23,6 @@ form.addEventListener("submit", e=>{
     if(ingresar){
         error.innerHTML = mensajeError
     } else{
-        logueado == "true"
         window.location.replace("./index.html");
     }
 });
