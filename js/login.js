@@ -24,7 +24,7 @@ form.addEventListener("submit", e=>{
         error.innerHTML = mensajeError
     } else{
         logueado == "true"
-        window.location.assign("index.html")
+        window.location.replace("./index.html");
     }
 });
 
