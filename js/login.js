@@ -2,7 +2,6 @@ var email = document.getElementById("inputEmail");
 var pass = document.getElementById("inputPass");
 var form = document.getElementById("loginForm");
 var error = document.getElementById("error");
-
 form.addEventListener("submit", e=>{
     e.preventDefault();
     let mensajeError = ""
@@ -25,11 +24,10 @@ form.addEventListener("submit", e=>{
         error.innerHTML = mensajeError
     } else{
         window.location.replace("./index.html");
-        sessionStorage.setItem("estaLogueado", "true");
+        localStorage.setItem("estaLogueado", "true");
+        localStorage.setItem("email", email.value);
     }
 });
-
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
