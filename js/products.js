@@ -133,11 +133,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         else{
             maxCount = undefined;
         }
-
-        document.getElementById("buscador").addEventListener("keyup", function(){
-            textoBusqueda = document.getElementById("buscador").value;
-        })
-
+        
         showProductsList();
     });
 });
