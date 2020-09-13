@@ -40,18 +40,16 @@ function showComments(array){
         }
 
         htmlContentToAppend += `
-        <a href="category-info.html" class="list-group-item list-group-item-action">
-        <div class="row">
-            <div class="col">
-                <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1">`+ comment.user +`</h4>
+        <div>
+            <div>
+                <div>
+                    <h4>`+ comment.user +`</h4>
                     <p>`+ score +`</p>
                     <p>`+ comment.dateTime +`</p>
                 </div>
-                <p class="mb-1">` + comment.description + `</p>
+                <p >` + comment.description + `</p>
             </div>
         </div>
-        </a>
         `
 
         document.getElementById("productComments").innerHTML = htmlContentToAppend;
@@ -94,18 +92,16 @@ function addComment(cname, cscore, cdesc, cdate){
         }
 
         htmlContentToAppend += `
-        <a href="category-info.html" class="list-group-item list-group-item-action">
-        <div class="row">
-        <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">`+ newComment.user +`</h4>
+        <div>
+        <div>
+            <div>
+                <h4>`+ newComment.user +`</h4>
                 <p>`+ score +`</p>
                 <p>`+ newComment.dateTime +`</p>
             </div>
-            <p class="mb-1">` + newComment.description + `</p>
+            <p>` + newComment.description + `</p>
         </div>
         </div>
-        </a>
         `
 
         document.getElementById("comentariosNuevos").innerHTML = htmlContentToAppend;
