@@ -56,21 +56,20 @@ function showComments(array){
     }
 }
 
-
-document.getElementById("postComment").addEventListener("click", postNewComment);
+document.getElementById("formSubmit").addEventListener("click", postNewComment);
 
 function postNewComment(){
-    var cname = localStorage.getItem("email");
-    var cscore = document.getElementById("scoreForm").value
-    var cdesc = document.getElementById("comentario").value
+    var cuser = localStorage.getItem("email");
+    var cscore = document.getElementById("scoreForm").value;
+    var cdesc = document.getElementById("comentario").value;
     var cdate = fechaYHora;
 
-    addComment(cname, cscore, cdesc, cdate);
+    addComment(cuser, cscore, cdesc, cdate);
 }
 
-function addComment(cname, cscore, cdesc, cdate){
+function addComment(cuser, cscore, cdesc, cdate){
     var newComment = {
-        user : cname,
+        user : cuser,
         score : cscore,
         description : cdesc,
         dateTime : cdate
@@ -78,9 +77,11 @@ function addComment(cname, cscore, cdesc, cdate){
 
     newComments.push[newComment];
 
-    var lista = newComments;
+    console.log(newComment);
 
-    for(var i = 0; i < lista.length; i++){
+    let htmlContentToAppend = "";
+
+    for(let i = 0; i < newComments.length; i++){
         let newComment = array[i];
         var score = "";
 
@@ -93,23 +94,21 @@ function addComment(cname, cscore, cdesc, cdate){
 
         htmlContentToAppend += `
         <div>
-        <div>
             <div>
-                <h4>`+ newComment.user +`</h4>
-                <p>`+ score +`</p>
-                <p>`+ newComment.dateTime +`</p>
+                <div>
+                    <h4>`+ newComment.user +`</h4>
+                    <p>`+ score +`</p>
+                    <p>`+ newComment.dateTime +`</p>
+                </div>
+                <p >` + newComment.description + `</p>
             </div>
-            <p>` + newComment.description + `</p>
-        </div>
         </div>
         `
 
-        document.getElementById("comentariosNuevos").innerHTML = htmlContentToAppend;
+        document.getElementById("productNewComments").innerHTML = htmlContentToAppend;
+        
     }
 }
-
-
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
