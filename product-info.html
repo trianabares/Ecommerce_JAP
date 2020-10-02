@@ -23,9 +23,16 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="my-profile.html"><p id="myProfile"></p></a>
-      <a class="py-2 d-none d-md-inline-block" onclick="localStorage.clear()" href="">Cerrar</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+          <p id="myProfile"></p>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" onclick="localStorage.clear()" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -54,11 +61,21 @@
     </dd>
   </dl>
 
+  <hr>
+        <dt class="subtitle">Productos relacionados</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
+          </div>
+        </dd>
+        <hr>
+
     <h4>Comentarios</h4>
       <div id="productComments">
       </div>
       <div id="productNewComments">
       </div>
+
+      
       
 
       <h4>Comentar</h4>
@@ -67,17 +84,17 @@
     <textarea name="texto" rows="4" cols="40" id="comentario">Escribe tu comentario aquí</textarea>
     <p class="clasificacion" id="scoreForm">
       <input id="radio1" type="radio" name="estrellas" value="5">
-      <label for="radio1">★</label>
+      <label for="radio1" value="5">★</label>
       <input id="radio2" type="radio" name="estrellas" value="4">
-      <label for="radio2">★</label>
+      <label for="radio2" value="4">★</label>
       <input id="radio3" type="radio" name="estrellas" value="3">
-      <label for="radio3">★</label>
+      <label for="radio3" value="3">★</label>
       <input id="radio4" type="radio" name="estrellas" value="2">
-      <label for="radio4">★</label>
+      <label for="radio4" value="2">★</label>
       <input id="radio5" type="radio" name="estrellas" value="1">
-      <label for="radio5">★</label>
+      <label for="radio5" value="1">★</label>
     </p>
-    <button type="button" id="formSubmit">Envar</button>
+    <button type="button" onclick="postNewComment()">Envar</button>
   </form>
 
   <footer class="text-muted">

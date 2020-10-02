@@ -56,8 +56,6 @@ function showComments(array){
     }
 }
 
-document.getElementById("formSubmit").addEventListener("click", postNewComment);
-
 function postNewComment(){
     var cuser = localStorage.getItem("email");
     var cscore = document.getElementById("scoreForm").value;
@@ -76,7 +74,6 @@ function addComment(cuser, cscore, cdesc, cdate){
     }; 
 
     newComments.push[newComment];
-
     console.log(newComment);
 
     let htmlContentToAppend = "";
@@ -110,6 +107,25 @@ function addComment(cuser, cscore, cdesc, cdate){
     }
 }
 
+function showRelatedProducts(array) {
+
+    let htmlContentToAppend = "";
+  
+    for (let i = 0; i < array.length; i++) {
+      let relatedProducts = array[i];
+  
+      htmlContentToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 w-100">
+            <a href="product-info.html"> <img class="img-fluid img-thumbnail" src="img/car` + relatedProducts + `.jpg" alt=""></a>
+        </div>
+    </div>`
+
+    document.getElementById("productRelatedProducts").innerHTML = htmlContentToAppend;
+  }
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -131,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCategoryHTML = product.category;
 
             showImagesGallery(product.images);
+            showRelatedProducts(product.relatedProducts);
         }
     });
 });
