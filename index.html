@@ -12,22 +12,25 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
+    <nav class="site-header sticky-top">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" width="190" alt=""></a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-            <p id="myProfile"></p>
-          </button>
-          <div class="dropdown-menu">
+        <div class="nav-item dropdown show">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="far fa-user"></i><span id="myProfile"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="cart.html">Mi carrito</a>
             <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" onclick="localStorage.clear()" href="index.html">Cerrar sesión</a>
+            <a class="dropdown-item" onclick="localStorage.clear(email)" href="index.html">Cerrar sesión</a>
           </div>
         </div>
       </div>
@@ -43,7 +46,7 @@
           <div class="row">
             <div class="col-md-4">
               <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
+                <img class="bd-placeholder-img card-img-top"  src="img/cat1.png">
                 <h3 class="m-3">Autos (122)</h3>
                 <div class="card-body">
                   <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
@@ -52,7 +55,7 @@
             </div>
             <div class="col-md-4">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat2.png">
                   <h3 class="m-3">Juguetes (354)</h3>
                   <div class="card-body">
                     <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
@@ -61,7 +64,7 @@
             </div>
             <div class="col-md-4">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat3.png">
                   <h3 class="m-3">Muebles (157)</h3>
                   <div class="card-body">
                     <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
@@ -70,7 +73,7 @@
             </div>
             <div class="col-md-4">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat4.png">
                   <h3 class="m-3">Herramientas (452)</h3>
                   <div class="card-body">
                     <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
@@ -79,7 +82,7 @@
             </div>
             <div class="col-md-4">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat5.png">
                   <h3 class="m-3">Computadoras (724)</h3>
                   <div class="card-body">
                     <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
@@ -88,7 +91,7 @@
             </div>
             <div class="col-md-4">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat6.png">
                   <h3 class="m-3">Vestimenta (841)</h3>
                   <div class="card-body">
                     <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>

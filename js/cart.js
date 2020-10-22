@@ -1,28 +1,67 @@
-var articles = {};
+function showCartList(cart){
 
-function showCartList(array){
+    var cartJson = cart.articles;
 
     let htmlContentToAppend = "";
 
-    for(let i = 0; i < array.length; i++){
-        let article = array[i];
+    for(let i = 0; i < cartJson.length; i++){
+        let article = cartJson[i];
 
         htmlContentToAppend += `
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + article.articles[i].src + `" alt="` + article.articles[i].name + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <small class="text-muted">` + article.articles[i].count + ` artículos</small>
-                    </div>
-                    <h5 class="mb-1">` + article.articles[i].currency + article.articles[i].unitCost + `</h5>
-                </div>
-            </div>
-        `
+            <table border="1" cellspacing="0" cellpadding="7">
+                <tr>
+                    <td width="100"> <img width="70px" src="` + article.src + `"> </td>
+                    <td width="300"> <p>`+ article.name +`</p> </td>
+                    <td width="200"> <p class="col-sm-4">` + article.currency + " " + article.unitCost + `</p> </td>
+                    <td width="200"> ` + ` <input style="max-width: 71px;"  onkeyup="currentCost(` + i + `, ` + article.unitCost + `, ` + "`" + article.currency + "`" + `)"
+                    onclick="currentCost(` + i + `, ` + article.unitCost + `, ` + "`" + article.currency + "`" + `)" id="cartCantidad` + i + `" type="number" value="` + article.count + `">` + ` </td>
+                    <td width="200"><p id="subtotalHolder` + i + `"></p></td>
+                </tr>
+                </table>
+            `;
 
-        document.getElementById("cartProducts-container").innerHTML = htmlContentToAppend;
-    }
+        getJSONData(CART_PRODUCTS_URL).then(function(resultObj){
+            if (resultObj.status === "ok"){
+                currentCost(i, article.unitCost, article.currency);
+            }
+        });
+}
+
+document.getElementById("cartProducts-container").innerHTML = htmlContentToAppend;
+}
+
+function currentCost(num, unitCost, currency)
+{
+  if (currency == "UYU")
+  {
+  var cartCantidad = document.getElementById("cartCantidad" + num).value;
+  var subtotalHolder = document.getElementById("subtotalHolder" + num);
+  var subtotal = cartCantidad*unitCost;
+  var subtotalUYU = "UYU " + subtotal;
+  subtotalHolder.innerHTML = subtotalUYU;
+
+  newCost[num] = subtotal;
+
+  }
+  else
+  {
+    var cartCantidad = document.getElementById("cartCantidad" + num).value;
+    var subtotalHolder = document.getElementById("subtotalHolder" + num);
+    var subtotal = cartCantidad*unitCost*40;
+    var subtotalUYU = "UYU " + subtotal;
+    subtotalHolder.innerHTML = subtotalUYU;
+
+    newCost[num] = subtotal;
+
+  }
+  var totalCost = newCost.reduce((a, b) => a + b, 0);
+  currentTotalCost(totalCost);
+}
+
+function currentTotalCost(totalCost)
+{
+  var totalCostPlaceholder = document.getElementById("totalPrice");
+  totalCostPlaceholder.innerHTML = "UYU " + totalCost;
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -33,9 +72,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CART_PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            article = resultObj.data;
+            cart = resultObj.data;
 
-            showCartList(article);
+            showCartList(cart);
+
+            newCost = [];
         }
     });
 });

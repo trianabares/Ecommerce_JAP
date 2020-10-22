@@ -11,6 +11,11 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152092/smartwizard/smart_wizard.min.css" rel="stylesheet" type="text/css" />
+ <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152091/smartwizard/smart_wizard_theme_arrows.min.css" rel="stylesheet" type="text/css" />
+ 
+ <script type="text/javascript" src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152197/smartwizard/jquery.smartWizard.min.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <style>
     .bd-placeholder-img {
@@ -27,6 +32,30 @@
         font-size: 3.5rem;
       }
     }
+
+    body {
+     background-color: #eee
+ }
+
+ .form-control:focus {
+     color: #495057;
+     background-color: #fff;
+     border-color: #80bdff;
+     outline: 0;
+     box-shadow: 0 0 0 0rem rgba(0, 123, 255, .25)
+ }
+
+ .btn-secondary:focus {
+     box-shadow: 0 0 0 0rem rgba(108, 117, 125, .5)
+ }
+
+ .close:focus {
+     box-shadow: 0 0 0 0rem rgba(108, 117, 125, .5)
+ }
+
+ .mt-200 {
+     margin-top: 200px
+ }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -57,10 +86,23 @@
       <div class="text-center p-4">
           <h2>Carrito</h2>
           <br>
+          <div>
+          <table border="1" cellspacing="0" cellpadding="7">
+            <tr>
+                <td width="100"></td>
+                <td width="300"><p>Nombre</p></td>
+                <td width="200"><p>Costo</p></td>
+                <td width="200"><p>Cantidad</p></td>
+                <td width="200"><p>Subtotal</p></td>
+            </tr>
+        </table>
+        </div>
           <div id="cartProducts-container">
           </div>
+          <div><p>Precio total: <span id="totalPrice"> </span></p>
+          </div>
       </div>
-  </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

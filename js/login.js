@@ -2,6 +2,7 @@ var email = document.getElementById("inputEmail");
 var pass = document.getElementById("inputPass");
 var form = document.getElementById("loginForm");
 var error = document.getElementById("error");
+
 form.addEventListener("submit", e=>{
     e.preventDefault();
     let mensajeError = ""

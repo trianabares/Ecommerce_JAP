@@ -3,6 +3,11 @@
     font-family: 'Raleway', serif !important;
 }
 
+.site-header{
+  background: rgb(171,48,114);
+background: linear-gradient(0deg, rgba(171,48,114,0) 0%, rgba(231,153,255,1) 46%, rgba(231,153,255,1) 100%);
+}
+
 .jumbotron .display-4{
     font-weight: bold;
 }
@@ -56,7 +61,7 @@ footer p {
 }
 
 .site-header a {
-  color: white;
+  color: black;
   transition: ease-in-out color .15s;
 }
 
